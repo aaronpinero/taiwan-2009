@@ -1,0 +1,223 @@
+$tyfy-grid-unit:0.8125rem;
+$tyfy-font-size-scalar:1.15;
+$tyfy-font-size-base:1.125rem;
+$tyfy-serif:'IBM Plex Serif',Georgia,serif;
+$tyfy-color-background:white;
+$tyfy-color-foreground:#666;
+$tyfy-color-primary:#56a;
+$tyfy-font-base:$tyfy-serif;
+$tyfy-font-heading:$tyfy-serif;
+$tyfy-font-pullquote:$tyfy-serif;
+$tyfy-color-text-head:#944;
+$tyfy-color-link-active:#944;
+
+$page-2col:920px;
+
+@import "../../node_modules/tyfy/source/scss/required/core";
+@import "../../node_modules/tyfy/source/scss/required/functions";
+@import "../../node_modules/tyfy/source/scss/required/settings";
+@import "../../node_modules/tyfy/source/scss/required/mixins";
+
+@import "../../node_modules/tyfy/source/scss/essential/normalize";
+@import "../../node_modules/tyfy/source/scss/essential/body";
+@import "../../node_modules/tyfy/source/scss/essential/spacing";
+
+@import "../../node_modules/tyfy/source/scss/optional/paragraphs";
+@import "../../node_modules/tyfy/source/scss/optional/headings";
+@import "../../node_modules/tyfy/source/scss/optional/links";
+@import "../../node_modules/tyfy/source/scss/optional/lists";
+@import "../../node_modules/tyfy/source/scss/optional/utility";
+@import "../../node_modules/tyfy/source/scss/optional/quotes";
+@import "../../node_modules/tyfy/source/scss/optional/tables";
+
+body {
+  padding:tygrid(3) tygrid(2) tygrid(5) tygrid(2);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight:normal;
+}
+.links-underlined a[href] {
+  border-bottom-color:rgba($tyfy-color-primary,0.25);
+  &:hover,
+  &:active {
+    border-bottom-color:$tyfy-color-link-active;
+  }
+}
+#top {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	height:1px;
+	width:1px;
+	overflow:hidden;
+}
+#rightColumn {
+	color:#808080;
+	font-size:tyscale(-2);
+	line-height:tylead(tyscale(-2),base);
+  margin-top:tygrid(5);
+	@media (min-width:$page-2col) {
+  	float:right;
+  	width:25%;
+	}
+  h2 {
+  	border-bottom:1px #e6e6e6 solid;
+  	border-top:2px #ccc solid;
+  	color:#808080;
+  	font-size:tyscale(-3);
+  	letter-spacing:0.15em;
+  	line-height:tylead(tyscale(-3),base);
+  	padding-top:tygrid(0.75);
+  	padding-bottom:tygrid(0.75);
+  	text-transform:uppercase;
+  	& + * {
+    	margin-top:tygrid(1);
+  	}
+  }
+}
+p.introduction {
+	font-size:tyscale(2);
+	line-height:tylead(tyscale(2),base);
+}
+ul.toc {
+	padding-left:0;
+	li {
+	  list-style:none;
+  }
+}
+ul.sitemenu {
+	margin:0;
+	padding:0;
+	li {
+    display:inline-block;
+  	margin:0;
+  	padding:0 tygrid(2) tygrid(1) 0;
+  	list-style:none;
+  	list-style-type:none;
+  }
+}
+#pageContainer {
+	margin-left:auto;
+	margin-right:auto;
+	max-width:640px;
+	@media (min-width:$page-2col) {
+	  max-width:960px;
+	}
+}
+#headContainer {
+  h1 a[href] {
+  	border:none;
+  	color:#944;
+  	text-decoration:none;
+  	&:hover,
+  	&:active {
+      border:none;
+    	color:#944;
+      text-decoration:none;
+  	}
+  }
+  p {
+  	color:#944;
+  	font-size:tyscale(1);
+  	line-height:tylead(tyscale(1),base);
+  	margin-top:0;
+  }
+}
+#columnContainer {
+	@include clearfix;
+}
+#leftColumn {
+  @media (min-width:$page-2col) {
+  	float:left;
+  	width:66.66%;
+  }
+}
+#footContainer {
+	font-size:tyscale(-2);
+	line-height:tylead(tyscale(-2),base);
+	color:#999;
+	padding-top:tygrid(4);
+}
+#footContainer ul {
+	margin:0;
+	padding:0;
+	li {
+  	display:inline-block;
+	  margin:0;
+    padding:0px tygrid(2) tygrid(2) 0;
+    list-style:none;
+    list-style-type:none;
+  }
+}
+.photo-640 img {
+	display:block;
+	width:100%;
+	height:auto;
+}
+p.caption {
+	border-bottom:1px #e6e6e6 solid;
+	color:#999;
+	font-size:tyscale(-2);
+	line-height:tylead(tyscale(-2),base);
+	margin-top:0;
+	padding:tygrid(1) 0;
+}
+.photo-320-left,
+.photo-320-right {
+	float:left;
+	width:47%;
+	margin-bottom:$tyfy-spacing-standard;
+	margin-right:$tyfy-spacing-standard;
+	img {
+  	border:none;
+  	display:block;
+  	width:100%;
+  	height:auto;
+	}
+}
+.photo-320-right {
+	float:right;
+	margin-left:$tyfy-spacing-standard;
+	margin-right:0;
+}
+.photo-grid {
+  display:flex;
+  flex-wrap:wrap;
+  margin-top:0;
+  justify-content:space-between;
+  img {
+    display:block;
+    height:30%;
+    margin-top:$tyfy-spacing-standard;
+    width:30%;
+  }
+  p {
+    width:100%;
+  }
+}
+
+#galleryContainer {
+	position:relative;
+	width:960px;
+	overflow:hidden;
+	font-size:1.6em;
+}
+#galleryContainer .visualpadding {
+	padding:0px 32px 0px 32px;
+}
+#galleryContainer p {
+	padding-right:288px;
+	margin-bottom:2em;
+}
+#galleryContainer .thumb {
+	float:left;
+	width:128px;
+	height:120px;
+}
+#galleryContainer .thumb img {
+	display:block;
+	border:0px;
+	margin:0px;
+	padding:0px;
+}

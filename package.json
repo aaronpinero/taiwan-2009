@@ -1,0 +1,37 @@
+{
+  "name": "taiwan-2009.git",
+  "version": "1.0.0",
+  "description": "A delicious interactive travel journal by Aaron Pinero",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "./bin/build-css",
+    "build-css-dev": "./bin/build-css-dev",
+    "watch-css": "./bin/watch-css",
+    "watch-css-dev": "./bin/watch-css-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronpinero/taiwan-2009.git"
+  },
+  "keywords": [
+    "website",
+    "travel",
+    "Taiwan"
+  ],
+  "author": "Aaron Pinero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronpinero/taiwan-2009/issues"
+  },
+  "homepage": "https://aaronpinero.net/taiwan/2009",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.2.6",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.14.11",
+    "postcss-cli": "^4.1.1",
+    "templatesjs": "^2.0.0",
+    "tyfy": "^1.4.2"
+  }
+}
