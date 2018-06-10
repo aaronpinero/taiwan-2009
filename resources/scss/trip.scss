@@ -10,6 +10,7 @@ $tyfy-font-heading:$tyfy-serif;
 $tyfy-font-pullquote:$tyfy-serif;
 $tyfy-color-text-head:#944;
 $tyfy-color-link-active:#944;
+$tyfyicons-path:"fonts";
 
 $page-2col:920px;
 
@@ -29,6 +30,8 @@ $page-2col:920px;
 @import "../../node_modules/tyfy/source/scss/optional/utility";
 @import "../../node_modules/tyfy/source/scss/optional/quotes";
 @import "../../node_modules/tyfy/source/scss/optional/tables";
+
+@import "../../node_modules/tyfy/source/scss/extras/icons";
 
 body {
   padding:tygrid(3) tygrid(2) tygrid(5) tygrid(2);
@@ -57,6 +60,9 @@ h1, h2, h3, h4, h5, h6 {
 	font-size:tyscale(-2);
 	line-height:tylead(tyscale(-2),base);
   margin-top:tygrid(5);
+  .shilin & {
+    margin-top:tygrid(2);
+  }
 	@media (min-width:$page-2col) {
   	float:right;
   	width:25%;
@@ -255,9 +261,9 @@ p.caption {
       background-color:rgba(black,0.2);
       border-radius:0.8125rem * 0.5;
       color:white;
-      content: "x";
+      content: tychar($tyfyicons-x);
       display: block;
-      font-family:$tyfy-sans;
+      font-family:$tyfy-symbol;
       height:tygrid(3);
       line-height:tygrid(3) / $tyfy-font-size-base;
       right: tygrid(2);
