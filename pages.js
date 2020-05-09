@@ -12,11 +12,11 @@ var dir = fs.readdir(filepath.source,function(err,files){
 		var x;
 		for (x=0;x<files.length;x++) {
 			var file = fs.readFileSync(filepath.source+files[x]);
-			var nextFileName = (x == (files.length - 1)) ? files[0] : files[x+1];
-			var prevFileName = (x === 0 ) ? files[files.length - 1] : files[x-1];
+			var nextLink = (x == (files.length - 1)) ? '' : '<li class="next"><a href="' + files[x+1] + '">Next Day</a></li>';
+			var prevLink = (x === 0 ) ? '' : '<li class="prev"><a href="' + files[x-1] + '">Previous Day</a></li>';
 			templatesjs.setSync(file);
-			file = templatesjs.renderSync("prev", prevFileName);
-			file = templatesjs.renderSync("next", nextFileName);
+			file = templatesjs.renderSync("prev", prevLink);
+			file = templatesjs.renderSync("next", nextLink);
 			fs.writeFileSync(filepath.dest+files[x],file);
 		}
 	}
