@@ -1,14 +1,15 @@
-$tygrid-unit:0.8125rem;
-$tyfont-size-scalar:1.15;
+$tygrid-unit:0.875rem;
+$tyfont-size-scalar:1.2;
 $tyfont-size-base:1.125rem;
 $tyfont-serif:'Noto Serif','Noto Serif TC',georgia,serif;
 $tyfont-sans:'Noto Sans','Noto Sans TC',helvetica,arial,sans-serif;
-$tycolor-bg:white;
+$tyfont-heading:$tyfont-serif;
+$tycolor-bg:#eee;
 $tycolor-fg:#444;
 $tycolor-text-light:#777;
 $tycolor-link-default:#56a;
 $tycolor-link-active:#944;
-$tyicons-path:"fonts";
+$tyicons-path:"fonts/tyicons";
 
 $page-2col:920px;
 
@@ -54,11 +55,17 @@ h1, h2, h3, h4, h5, h6 {
 	width:1px;
 	overflow:hidden;
 }
+
 #rightColumn {
 	color:$tycolor-text-light;
-	font-size:tyscale(-2);
-	line-height:tylead(tyscale(-2),base);
+	font-size:tyscale(-1);
+	line-height:tylead(tyscale(-1));
   margin-top:tygrid(5);
+  body#home & {
+    @media (min-width:$page-2col) {
+      margin-top:0;
+    }
+  }
   .shilin & {
     margin-top:tygrid(2);
   }
@@ -68,11 +75,11 @@ h1, h2, h3, h4, h5, h6 {
   h2 {
   	border-bottom:1px $tycolor-border solid;
   	border-top:2px $tycolor-border solid;
-  	font-size:tyscale(-3);
+  	font-size:tyscale(-2);
   	letter-spacing:0.15em;
-  	line-height:tylead(tyscale(-3));
-  	padding-top:tygrid(0.75);
-  	padding-bottom:tygrid(0.75);
+  	line-height:tylead(tyscale(-2));
+  	padding-top:tygrid(1);
+  	padding-bottom:tygrid(1);
   	text-transform:uppercase;
   	& + * {
     	margin-top:tygrid(1);
@@ -80,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 p.introduction {
-	font-size:tyscale(2);
+	font-size:tyscale(1);
 	line-height:tylead(tyscale(2));
 }
 ul.toc {
@@ -91,16 +98,21 @@ ul.toc {
   }
 }
 ul.sitemenu {
-	margin:0;
-	padding:0;
+  display:flex;
+  font-family:$tyfont-sans;
+  padding:0;
+  padding-bottom:tygrid(2);
 	li {
-    display:inline-block;
-  	margin:0;
-  	padding:0 tygrid(2) tygrid(1) 0;
-  	list-style:none;
-  	list-style-type:none;
+	  margin:0;
+    padding:0;
+    list-style:none;
+    list-style-type:none;
+  }
+  li + li {
+    margin-left:tygrid(2);
   }
 }
+
 #pageContainer {
 	margin-left:auto;
 	margin-right:auto;
@@ -109,9 +121,9 @@ ul.sitemenu {
 	  max-width:960px;
 	}
 }
+
 #headContainer {
   h1 {
-    font-family:$tyfont-serif;
     a[href] {
     	border:none;
     	color:$tycolor-fg;
@@ -129,6 +141,7 @@ ul.sitemenu {
   	line-height:tylead(tyscale(1));
   }
 }
+
 #columnContainer {
   @media (min-width:$page-2col) {
     display:flex;
@@ -140,6 +153,7 @@ ul.sitemenu {
   	width:66.66%;
   }
 }
+
 nav.paging {
   ul {
     display:flex;
@@ -148,35 +162,40 @@ nav.paging {
     padding:0;
     li.prev {
       margin-right:auto;
+      a::before {
+        content:tychar($tyicons-angle-left);
+        font-family:$tyfont-symbol;
+        font-size:0.7rem;
+        margin-right:0.3rem;
+      }
     }
     li.next {
       margin-left:auto;
+      a::after {
+        content:tychar($tyicons-angle-right);
+        font-family:$tyfont-symbol;
+        font-size:0.7rem;
+        margin-left:0.3rem;
+      }
     }
   }
 }
+
 #footContainer {
-	font-size:tyscale(-2);
-	line-height:tylead(tyscale(-2),base);
+	font-size:tyscale(-1);
+	line-height:tylead(tyscale(-1));
 	color:$tycolor-text-light;
 	padding-top:tygrid(4);
-	ul {
-    display:flex;
-    font-family:$tyfont-sans;
-    margin:0;
-    padding:0;
-    padding-bottom:tygrid(2);
-  	li {
-  	  margin:0;
-      padding:0;
-      list-style:none;
-      list-style-type:none;
-    }
-    li + li {
-      margin-left:tygrid(2);
-    }
-  }
 }
-.tymedia-caption {
-  border-bottom:1px $tycolor-border solid;
-  padding-bottom:tygrid(1);
+
+.tymedia {
+  img {
+    border:tygrid(0.5) white solid;
+    box-shadow:0 0 tygrid(0.5) rgba(black,0.2);
+    box-sizing:border-box;
+  }
+  .tymedia-caption {
+    border-bottom:1px $tycolor-border solid;
+    padding-bottom:tygrid(1);
+  }
 }
