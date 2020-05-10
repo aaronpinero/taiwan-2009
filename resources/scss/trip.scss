@@ -201,9 +201,15 @@ nav.paging {
 }
 
 .zoomable {
-  a {
-    border-bottom:none !important;
-    text-decoration:none !important;
+  transition:all 0.25s;
+  a.tybutton {
+    font-family:$tyfont-sans;
+    font-size:tyscale(-2);
+    line-height:tylead(tyscale(-2));
+    padding:0.25rem 0.5rem;
+    &.zoomout {
+      display:none;
+    }
   }
   &:target {
     align-items:center;
@@ -223,6 +229,14 @@ nav.paging {
     top:0;
     width:100%;
     z-index:999;
+    a {
+      &.zoomout {
+        display:inline-block;
+      }
+      &.zoomin {
+        display:none;
+      }
+    }
     img {
       box-shadow:0 0 1rem rgba(0,0,0,0.2);
       max-height:60vh;
