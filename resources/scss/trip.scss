@@ -1,9 +1,9 @@
 $tygrid-unit:0.875rem;
 $tyfont-size-scalar:1.2;
 $tyfont-size-base:1.125rem;
-$tyfont-serif:'Noto Serif','Noto Serif TC',georgia,serif;
 $tyfont-sans:'Noto Sans','Noto Sans TC',helvetica,arial,sans-serif;
-$tyfont-heading:$tyfont-serif;
+$tyfont-base:$tyfont-sans;
+$tyfont-heading:$tyfont-sans;
 $tycolor-bg:#eee;
 $tycolor-fg:#444;
 $tycolor-text-light:#777;
@@ -46,6 +46,30 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-color:$tycolor-link-active;
   }
 }
+p.introduction {
+	font-size:tyscale(1);
+	line-height:tylead(tyscale(2));
+}
+ul.toc {
+	padding-left:0;
+	li {
+	  list-style:none;
+  }
+}
+ul.sitemenu {
+  display:flex;
+  padding:0;
+  padding-bottom:tygrid(2);
+	li {
+	  margin:0;
+    padding:0;
+    list-style:none;
+    list-style-type:none;
+  }
+  li + li {
+    margin-left:tygrid(2);
+  }
+}
 #top {
 	display:block;
 	position:absolute;
@@ -84,32 +108,6 @@ h1, h2, h3, h4, h5, h6 {
   	& + * {
     	margin-top:tygrid(1);
   	}
-  }
-}
-p.introduction {
-	font-size:tyscale(1);
-	line-height:tylead(tyscale(2));
-}
-ul.toc {
-  font-family:$tyfont-sans;
-	padding-left:0;
-	li {
-	  list-style:none;
-  }
-}
-ul.sitemenu {
-  display:flex;
-  font-family:$tyfont-sans;
-  padding:0;
-  padding-bottom:tygrid(2);
-	li {
-	  margin:0;
-    padding:0;
-    list-style:none;
-    list-style-type:none;
-  }
-  li + li {
-    margin-left:tygrid(2);
   }
 }
 
@@ -203,7 +201,6 @@ nav.paging {
 .zoomable {
   transition:all 0.25s;
   a.tybutton {
-    font-family:$tyfont-sans;
     font-size:tyscale(-2);
     line-height:tylead(tyscale(-2));
     padding:0.25rem 0.5rem;
@@ -213,9 +210,7 @@ nav.paging {
   }
   &:target {
     align-items:center;
-    background-color:rgba(white,0.85);
-    -webkit-backdrop-filter:blur(5px);
-    backdrop-filter:blur(5px);
+    background-color:rgba(white,0.95);
     color:white;
     display:flex;
     flex-direction:column;
@@ -229,6 +224,11 @@ nav.paging {
     top:0;
     width:100%;
     z-index:999;
+    @supports ((backdrop-filter:blur(5px)) or (-webkit-backdrop-filter:blur(5px))) {
+      background-color:rgba(white,0.75);
+      -webkit-backdrop-filter:blur(5px);
+      backdrop-filter:blur(5px);
+    }
     a {
       &.zoomout {
         display:inline-block;
