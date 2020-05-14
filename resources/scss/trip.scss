@@ -198,6 +198,12 @@ nav.paging {
   }
 }
 
+.figure-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  grid-gap:2rem;
+}
+
 .zoomable {
   transition:all 0.25s;
   a.tybutton {

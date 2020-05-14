@@ -3,3 +3,4 @@ node_modules
 resources/thumbs/*
 resources/photos/*
 resources/slides/*
+.idea
