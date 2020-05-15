@@ -213,16 +213,16 @@ nav.paging {
     height:2rem;
     line-height:tylead(tyscale(-2));
     overflow:hidden;
-    padding:0.5rem;
+    padding:0;
     width:2rem;
     &::before {
       background-position:center center;
       background-repeat:no-repeat;
-      background-size:contain;
+      background-size:1.125rem 1.125rem;
       content:"";
       display:inline-block;
-      height:1rem;
-      width:1rem;
+      height:2rem;
+      width:2rem;
     }
     &.zoomin {
       position:absolute;
