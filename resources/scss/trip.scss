@@ -8,7 +8,7 @@ $tycolor-bg:#eee;
 $tycolor-fg:#444;
 $tycolor-text-light:#777;
 $tycolor-link-default:#56a;
-$tycolor-link-active:#944;
+$tycolor-link-active: #994444;
 $tyicons-path:"fonts/tyicons";
 
 $page-2col:920px;
@@ -47,13 +47,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 p.introduction {
-	font-size:tyscale(1);
-	line-height:tylead(tyscale(2));
+  font-size:tyscale(1);
+  line-height:tylead(tyscale(2));
 }
 ul.toc {
-	padding-left:0;
-	li {
-	  list-style:none;
+  padding-left:0;
+  li {
+    list-style:none;
   }
 }
 ul.sitemenu {
@@ -71,19 +71,19 @@ ul.sitemenu {
   }
 }
 #top {
-	display:block;
-	position:absolute;
-	top:0;
-	left:0;
-	height:1px;
-	width:1px;
-	overflow:hidden;
+  display:block;
+  height:1px;
+  left:0;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  width:1px;
 }
 
 #rightColumn {
-	color:$tycolor-text-light;
-	font-size:tyscale(-1);
-	line-height:tylead(tyscale(-1));
+  color:$tycolor-text-light;
+  font-size:tyscale(-1);
+  line-height:tylead(tyscale(-1));
   margin-top:tygrid(5);
   body#home & {
     @media (min-width:$page-2col) {
@@ -93,9 +93,9 @@ ul.sitemenu {
   .shilin & {
     margin-top:tygrid(2);
   }
-	@media (min-width:$page-2col) {
+  @media (min-width:$page-2col) {
   	width:25%;
-	}
+  }
   h2 {
   	border-bottom:1px $tycolor-border solid;
   	border-top:2px $tycolor-border solid;
@@ -112,26 +112,26 @@ ul.sitemenu {
 }
 
 #pageContainer {
-	margin-left:auto;
-	margin-right:auto;
-	max-width:640px;
-	@media (min-width:$page-2col) {
-	  max-width:960px;
-	}
+  margin-left:auto;
+  margin-right:auto;
+  max-width:640px;
+  @media (min-width:$page-2col) {
+    max-width:960px;
+  }
 }
 
 #headContainer {
   h1 {
     a[href] {
-    	border:none;
-    	color:$tycolor-fg;
-    	text-decoration:none;
-    	&:hover,
-    	&:active {
+      border:none;
+      color:$tycolor-fg;
+      text-decoration:none;
+      &:hover,
+      &:active {
         border:none;
         color:$tycolor-link-active;
         text-decoration:none;
-    	}
+      }
     }
   }
   p {
@@ -143,6 +143,7 @@ ul.sitemenu {
 #columnContainer {
   @media (min-width:$page-2col) {
     display:flex;
+    flex-wrap:wrap;
     justify-content:space-between;
   }
 }
@@ -150,6 +151,9 @@ ul.sitemenu {
   @media (min-width:$page-2col) {
   	width:66.66%;
   }
+}
+#fullWidth {
+  width:100%;
 }
 
 nav.paging {
@@ -202,6 +206,13 @@ nav.paging {
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
   grid-gap:2rem;
+}
+
+#palacemapcontainer {
+  cursor:pointer;
+  figcaption.tymedia-caption {
+    border-bottom:none;
+  }
 }
 
 .zoomable {
