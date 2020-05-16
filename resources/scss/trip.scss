@@ -206,7 +206,7 @@ nav.paging {
 
 .zoomable {
   position:relative;
-  transition:all 0.25s;
+  transition:all 100ms;
   a.tybutton {
     box-sizing:border-box;
     font-size:tyscale(-2);
