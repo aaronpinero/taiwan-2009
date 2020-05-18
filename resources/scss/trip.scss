@@ -288,16 +288,10 @@ nav.paging {
     }
     img {
       box-shadow:0 0 1rem rgba(0,0,0,0.2);
-      max-height:70vh;
+      max-height:calc(100vh - 8rem);
       max-width:1200px;
       object-fit:cover;
       width:100%;
-      @media (min-height:800px) {
-        max-height:80vh;
-      }
-      @media (min-height:1000px) {
-        max-height:90vh;
-      }
     }
   }
 }
