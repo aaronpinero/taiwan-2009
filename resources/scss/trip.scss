@@ -261,7 +261,8 @@ nav.paging {
     left:0;
     margin:0;
     outline:none;
-    padding:2rem;
+    overflow:auto;
+    padding:1rem;
     position:fixed;
     text-align:center;
     top:0;
@@ -276,8 +277,8 @@ nav.paging {
       &.zoomout {
         display:inline-block;
         position:absolute;
-        right:3rem;
-        top:3rem;
+        right:2rem;
+        top:2rem;
         @media (min-width:1264px) {
           right:calc(50vw - 584px);
         }
@@ -288,10 +289,14 @@ nav.paging {
     }
     img {
       box-shadow:0 0 1rem rgba(0,0,0,0.2);
-      max-height:calc(100vh - 8rem);
+      height:auto;
       max-width:1200px;
       object-fit:cover;
       width:100%;
+    }
+    figcaption {
+      border-bottom:none;
+      padding-bottom:0;
     }
   }
 }
